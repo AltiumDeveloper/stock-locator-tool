@@ -1,10 +1,10 @@
 ﻿# stock-locator-tool
 
-The Stock Locator Tool is a React component that can be embedded into your own project. It provides search functionality to display offers and stock levels for a part, powered by the [Nexar API](https://nexar.com/).
+The Stock Locator Tool is a React component that can be embedded into your own project. It provides search functionality to display offers and stock levels for a part, powered by the [Octopart API](https://octopart.com/).
 
-This repository includes an `examples` folder which, includes examples of how to fetch Nexar access tokens to provide the tool with and an examples of how you may wish to embed the tool. Below, a couple of examples are outlined:
+This repository includes an `examples` folder which, includes examples of how to fetch A365 access tokens to provide the tool with and an examples of how you may wish to embed the tool. Below, a couple of examples are outlined:
 
-**Search -** This is the default experience- there is a search form and a list of results are displayed. An example of this can be found at `examples/react-app`
+**Search -** This is the default experience - there is a search form and a list of results are displayed. An example of this can be found at `examples/react-app`
 
 **Single Part -** This is for if you just want to display the offers for a given part without the searching functionality. An example can be found at `examples/single-part-example`. This is achieved using the parameters: `limit`, `disableSearch`, and `q` which are explained in more detail [below](#Parameters)
 
@@ -12,27 +12,27 @@ Please see the rest of the README below to see how to embed the tool into your o
 
 ## Prerequisites
 
-You must have a Nexar account and application at nexar.com that has the supply scope. The application's client ID and client secret should be used to fetch access tokens that will then be used by the tool.
+You must have a Nexar account (sign up [here](https://octopart.com/business/api/v4/api-transition)) and application at nexar.com that has the supply scope. The application's client ID and client secret should be used to fetch access tokens that will then be used by the tool.
 
 You must have [node](https://nodejs.org/en/) installed.
 
 ## Hosting the Tool locally
 
-The `examples-implementations` folder includes an example express app for fetching and caching tokens as well as a react app that displays the Stock Locator tool using the token to query the Nexar API. To start hosting the tool locally you will need to clone the repository using the following command:
+The `examples-implementations` folder includes an example express app for fetching and caching tokens as well as a React app that displays the Stock Locator tool using the token to query the Octopart API. To start hosting the tool locally you will need to clone the repository using the following command:
 
 ```
-gh repo clone NexarDeveloper/stock-locator-tool
+gh repo clone AltiumDeveloper/stock-locator-tool
 ```
 
 ### Starting up the express app
 
-You will need to input your Nexar client ID and secret into the app. This client ID and secret must be from a Nexar app that has the supply scope. You can do this on line 7 of `stock-locator-tool/examples/express-app/index.js`.
+You will need to input your Octopart client ID and secret into this app. This client ID and secret must be from an Octopart app that has the supply scope. You can do this on line 7 of `stock-locator-tool/examples/express-app/index.js`.
 
 In the `express-app` folder use the command `node index.js` to start up the app.
 
-### Starting up the react app
+### Starting up the React app
 
-If you aren't already set up with react, in the folder `stock-locator-tool/examples/react-app`, you will need to use the following commands: `npm install -g create-react-app` and `npm install --save react react-dom`
+If you aren't already set up with React, in the folder `stock-locator-tool/examples/react-app`, you will need to use the following commands: `npm install -g create-react-app` and `npm install --save react react-dom`
 
 Then to install the dependencies required for the tool you can use the command:
 
@@ -40,11 +40,11 @@ Then to install the dependencies required for the tool you can use the command:
 npm i --save-dev @types/styled-components @types/country-list @types/date-fns @types/react-highlight-words @types/webfontloader @apollo/client
 ```
 
-Once all of the dependencies are installed then you can start the react app using the `npm start` command.
+Once all the dependencies are installed then you can start the React app using the `npm start` command.
 
 ## Embedding
 
-There a couple of methods to installing the tool outlined below. The most seamless experience would be to use the NPM package. If you want the most customizable experience I would recommend the "Drag and Drop" method. With this you can then dive into the code to customize as you wish and make any adaptations.
+There are a couple of methods to install the tool outlined below. The most seamless experience would be to use the NPM package. If you want the most customizable experience I would recommend the "Drag and Drop" method. With this you can then dive into the code to customize as you wish and make any adaptations.
 
 ### NPM Package
 
@@ -52,15 +52,15 @@ We have released the tool as an [NPM package](https://www.npmjs.com/package/@alt
 
 ### Drag and Drop
 
-If you wish to dive into the code and make your own changes, in `stock-locator-tool/src` you will find the folder `nexar-stock-locator-tool` which contains all of the code for the component. To embed the tool you can simply drag and drop this folder into your project and install any missing dependencies - these are listed at the bottom of the page.
+If you wish to dive into the code and make your own changes, in `stock-locator-tool/src` you will find the folder `octopart-stock-locator-tool` which contains all the code for the component. To embed the tool you can simply drag and drop this folder into your project and install any missing dependencies - these are listed at the bottom of the page.
 
 ## Parameters
 
 _searchParameters_ is a mandatory attribute for the tool and includes your preferences for the tools search functionality as well as the access token. The only mandatory field here is the `token` as without it the tool won't be functional. Listed below are the fields:
 
 | Parameter              | Type    | Description                                                                | Default | Required? |
-| ---------------------- | ------- | -------------------------------------------------------------------------- | ------- | --------- |
-| token                  | string  | Access token for Nexar API                                                 | N/A     | mandatory |
+| ---------------------- | ------- |----------------------------------------------------------------------------| ------- | --------- |
+| token                  | string  | Access token for Octopart API                                              | N/A     | mandatory |
 | authorizedOnly         | boolean | Whether to only return offers from authorized dealers                      | false   | optional  |
 | country                | string  | Your user's ISO-3166-1 alpha-2 country code                                | US      | optional  |
 | currency               | string  | Your user's ISO-4217 currency code                                         | USD     | optional  |
@@ -90,11 +90,11 @@ searchParameters = {{
 
 ### Token
 
-Nexar uses the OAuth2 authorization flow for API access. To query the API a valid access token must be provided. For development and testing, you can generate an access token in the [Nexar Portal](https://portal.nexar.com/) by going to Applications -> Details (for your app) -> Access Token -> Generate Token.
+Octopart uses the OAuth2 authorization flow for API access. To query the API a valid access token must be provided. For development and testing, you can generate an access token in the [Nexar Portal](https://portal.nexar.com/) by going to Applications -> Details (for your app) -> Access Token -> Generate Token.
 
 For production applications of the tool, tokens should be automatically fetched as needed. These tokens are valid for 24 hours and should be cached accordingly. We have an example in the folder `express-app` which provides tokens on localhost:5000 which are then fetched by the example site in the folder `react-app`.
 
-The endpoint for fetching access tokens is https://identity.nexar.com/connect.token. You must pass in the `client_credentials` grant type and also your applications client id and client secret.
+The endpoint for fetching access tokens is https://identity.nexar.com/connect/token. You must pass in the `client_credentials` grant type and also your applications client id and client secret.
 
 ## Styling
 
@@ -150,7 +150,7 @@ customColors = {{
 }}
 ```
 
-If you would like to customize the tool further to your liking, it uses [styled-components](https://styled-components.com/). Within the `nexar-stock-locator-tool/components` folder you can find all the components for the tool. At the highest level are files such as `StockLocatorTool.tsx`, `searchForm.tsx` or `searchResults.tsx`. Then going into the `part` folder you can find the components for the offers tables.
+If you would like to customize the tool further to your liking, it uses [styled-components](https://styled-components.com/). Within the `octopart-stock-locator-tool/components` folder you can find all the components for the tool. At the highest level are files such as `StockLocatorTool.tsx`, `searchForm.tsx` or `searchResults.tsx`. Then going into the `part` folder you can find the components for the offers tables.
 
 The final attribute on the `StockLocatorTool` component is `hideColumns`. Here you can easily hide certain columns from the offers tables. Each field is a boolean that will default to false, if you wish to hide a column, simply set the field corresponding to the column you want to hide to "true". Here's an example showing all fields:
 

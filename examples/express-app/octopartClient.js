@@ -54,16 +54,16 @@ function getRequest(options, data) {
   });
 }
 
-class NexarClient {
+class OctopartClient {
   #accessToken;
   #exp;
   #id;
   #secret;
 
   /**
-   * Client for the Nexar API to manage authorization and requests.
-   * @param {string} id - the client id assigned to a Nexar application.
-   * @param {string} secret - the client secret assigned to a Nexar application.
+   * Client for the Octopart API to manage authorization and requests.
+   * @param {string} id - the client id assigned to an Octopart application.
+   * @param {string} secret - the client secret assigned to an Octopart application.
    */
 
   constructor(id, secret) {
@@ -105,4 +105,4 @@ class NexarClient {
   }
 }
 
-module.exports = { NexarClient };
+module.exports = { OctopartClient };

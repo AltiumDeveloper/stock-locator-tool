@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { IncomingColors } from "../types";
 import { deviceWidths } from "../lib";
-import PoweredByNexar from "./icons/poweredByNexar";
+import PoweredByOctopart from "./icons/poweredByOctopart";
 
 type FooterProps = {
   theme: IncomingColors;
@@ -11,9 +11,9 @@ type FooterProps = {
 const Footer = ({ theme }: FooterProps) => {
   return (
     <FooterContainer>
-      <NexarLogo style={{ color: theme.text }}>
-        <PoweredByNexar />
-      </NexarLogo>
+      <OctopartLogo style={{ color: theme.text }}>
+        <PoweredByOctopart />
+      </OctopartLogo>
       <FooterText
         style={{ color: theme.text, borderLeft: `1px solid ${theme.tint}` }}
       >
@@ -55,7 +55,7 @@ const FooterText = styled.div`
   }
 `;
 
-const NexarLogo = styled.div`
+const OctopartLogo = styled.div`
   display: inline-block;
   padding: 12px;
   border-radius: 4px;
