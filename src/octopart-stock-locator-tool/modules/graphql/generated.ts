@@ -21,7 +21,7 @@ export type Scalars = {
   Time: any;
 };
 
-/** An application belonging to an organization which facilitates access. Users interact with the Nexar API through applications. */
+/** An application belonging to an organization which facilitates access. Users interact with the Octopart API through applications. */
 export type AdmApplication = {
   __typename?: 'AdmApplication';
   /** When this application was created. */
@@ -64,7 +64,7 @@ export type AdmApplicationSecurity = {
   clientSecret: Scalars['String'];
 };
 
-/** An Organization is an entity representing a partner, company or individual engaging with Nexar. */
+/** An Organization is an entity representing a partner, company or individual engaging with Octopart. */
 export type AdmOrganization = {
   __typename?: 'AdmOrganization';
   /** The applications belonging to this organization through which users interact with the API. */
@@ -92,7 +92,7 @@ export type AdmSupplyCounts = {
   partLimit: Scalars['Int'];
 };
 
-/** A user represents and individual who can login to Nexar and interact with API through applications of this organization. */
+/** A user represents and individual who can login to Octopart and interact with API through applications of this organization. */
 export type AdmUser = {
   __typename?: 'AdmUser';
   /** When the user was created in the system. */
@@ -2528,7 +2528,7 @@ export type DesWorkspaceFilterInput = {
 
 export type DesWorkspaceLocation = {
   __typename?: 'DesWorkspaceLocation';
-  /** The preferred Nexar API URL to use for this location. */
+  /** The preferred Octopart API URL to use for this location. */
   apiServiceUrl: Scalars['String'];
   /** The preferred files service URL to use for this location. */
   filesServiceUrl: Scalars['String'];
@@ -3827,7 +3827,7 @@ export type Query = {
   supAttributes: Array<SupAttribute>;
   /** Get categories */
   supCategories: Array<SupCategory>;
-  /** Nexar infrastructure, subject to change. */
+  /** Octopart infrastructure, subject to change. */
   supCiivaIdFromPartId?: Maybe<Scalars['String']>;
   /** Get manufacturer companies */
   supManufacturers: Array<SupCompany>;
@@ -3835,11 +3835,11 @@ export type Query = {
   supMultiMatch: Array<SupPartMatch>;
   /** @deprecated Use `supPartIdFromCiivaId`. */
   supOctopartIdFromCiivaId?: Maybe<Scalars['String']>;
-  /** Nexar supply part data for internal use only. */
+  /** Octopart supply part data for internal use only. */
   supPartExtrasByPartId?: Maybe<SupPartExtras>;
-  /** Nexar infrastructure, subject to change. */
+  /** Octopart infrastructure, subject to change. */
   supPartIdFromCiivaId?: Maybe<Scalars['String']>;
-  /** Nexar infrastructure, subject to change. */
+  /** Octopart infrastructure, subject to change. */
   supPartIdsFromCiivaIds: Array<Maybe<Scalars['String']>>;
   /** Get parts by ID. */
   supParts: Array<Maybe<SupPart>>;
@@ -4540,7 +4540,7 @@ export type SupPart = {
   documentCollections: Array<SupDocumentCollection>;
   /** The estimated factory lead time in days derived from trusted distributor offers. */
   estimatedFactoryLeadDays?: Maybe<Scalars['Int']>;
-  /** Nexar supply part data for internal use only. */
+  /** Octopart supply part data for internal use only. */
   extras?: Maybe<SupPartExtras>;
   /** A link to a manufacturer page to request free sample kits for this part. */
   freeSampleUrl?: Maybe<Scalars['String']>;
@@ -4605,7 +4605,7 @@ export type SupPartCad = {
   symbolImageUrl?: Maybe<Scalars['String']>;
 };
 
-/** Nexar supply part data for internal use only. */
+/** Octopart supply part data for internal use only. */
 export type SupPartExtras = {
   __typename?: 'SupPartExtras';
   alternatives: Array<SupPartExtras>;
@@ -4620,7 +4620,7 @@ export type SupPartExtras = {
 };
 
 
-/** Nexar supply part data for internal use only. */
+/** Octopart supply part data for internal use only. */
 export type SupPartExtrasAlternativesArgs = {
   first?: Scalars['Int'];
 };

@@ -5,7 +5,7 @@ const { generate } = require("@graphql-codegen/cli");
     schema: "https://api.nexar.com/graphql",
     documents: "./src/**/*.graphql",
     generates: {
-      "./src/modules/graphql/generated.ts": {
+      "./src/octopart-stock-locator-tool/modules/graphql/generated.ts": {
         plugins: [
           "typescript",
           "typescript-operations",

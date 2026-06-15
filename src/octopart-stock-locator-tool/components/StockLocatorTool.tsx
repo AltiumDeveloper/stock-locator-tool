@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { runQuery } from "../nexarQuery";
+import { runQuery } from "../octopartQuery";
 import SearchForm from "./searchForm";
 import SearchResults from "./searchResults";
 import styled from "styled-components";

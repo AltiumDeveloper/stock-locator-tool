@@ -1,3 +1,3 @@
-import { StockLocatorTool } from "./nexar-stock-locator-tool/components/StockLocatorTool";
+import { StockLocatorTool } from "./octopart-stock-locator-tool/components/StockLocatorTool";
 
 module.exports = StockLocatorTool;
