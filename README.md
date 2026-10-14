@@ -1,6 +1,6 @@
 ﻿# stock-locator-tool
 
-The Stock Locator Tool is a React component that can be embedded into your own project. It provides search functionality to display offers and stock levels for a part, powered by the [Octopart API](https://octopart.com/).
+The Stock Locator Tool is a React component that can be used as an example for how an integration can be embedded into your own project. It provides search functionality to display offers and stock levels for a part, powered by the [Octopart API](https://octopart.com/).
 
 This repository includes an `examples` folder which, includes examples of how to fetch A365 access tokens to provide the tool with and an examples of how you may wish to embed the tool. Below, a couple of examples are outlined:
 
